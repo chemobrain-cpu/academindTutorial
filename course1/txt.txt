@@ -1,0 +1,34 @@
+xxxxx Node.js Program LifeCycle
+
+when we execute our server using "node app.js", node.js goes thru our code and  parsed the code and registers all functions and variables before it now begin executing our code  but we never left the program this is due to event loop 
+    
+xxxxxx Event Loops:
+ its a loop process that is managed by node.js which  keeps on running as long as there is work to do....i.e as long as theres event listeners registered
+ all function to be executed only when we make a post or get request are all listeners.......even when this functions have been executed this function never gets exited and this keeps our server listening from other incoming request from different client(we can use process.exit() to quit the function but this might close down our server) ..other listeners are defined when we use an api and so on or acessing database using the mongoose api
+
+
+   xxxxx Event Driven Code Execution:
+
+node.js carries out event driven code execution in the sense that wen we run "node app.js",it  node.js goes thru our code and  parsed the code and registers all functions and variables and also registers event.....
+and only when this event happens does the callback provided in the events get executed e.g the res.on() events but while the events hasnt happened,they didnt block our code because there done asynchronously behind the scene..........
+
+ blocking and non-blocking codes:
+code which might take time to executed might provide us an option of executing it synchronously or asynchronously....e.g 
+     fs.appendFile() and fs.appendFileSync()
+
+     synchronous execution is blocking because node will have to wait for it to finish execution but asynchronous operation is non blocking because node will not have to wait since its executing it asynchronously in the background and for asynchronousoperations,a callback is usually provided so that when the operation gets executed,then do something with the data recieved e.g
+
+fs.appendFile("./textt.txt","i was written to this file via node",(err)=>{
+    console.log("written to the file")
+})
+
+
+
+
+
+
+
+    
+
+
+

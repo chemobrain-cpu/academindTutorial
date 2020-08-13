@@ -1,0 +1,56 @@
+<%- include("../header") %>
+<style>
+    .details,.add-to-cart{
+        display:inline-block;
+    }
+</style>
+
+ <body>
+     <%- include("../nav") %>
+     <br>
+     <br>
+     <br>
+     <br>
+     
+
+     <% if(data.length > 0){ %>
+        <!-- render a card component containing each items-->
+        <div class="card-container">
+        <% for(let val of data){ %>
+            <div class="card">
+                <div class="card-head">
+                    <h2 class="head-title">
+                        <%= val.title %>
+                    </h2>
+
+                </div>
+                <div class="card-body">
+                    <img class="body-image" src=<%= val.imageurl %>alt="an image">
+                    <p class="body-price">$ <%= val.price %></p>
+                    <p class="description"><%= val.description %></p>
+                    <form class="details" action="/products/<%= val.id %>">
+                        <button class="details-button">Details</button>
+                    </form>
+                    <%- include("../cart-form",{val:val})  %>
+                    
+                   
+                   
+
+
+                </div>
+        
+            </div>
+
+            
+            
+
+
+        <% } %>
+    </div>
+
+        
+     <% } %>
+     
+
+ </body>
+ </html>

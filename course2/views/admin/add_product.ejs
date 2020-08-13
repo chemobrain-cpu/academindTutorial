@@ -1,0 +1,72 @@
+<%- include("../header") %>
+<style>
+    .form{
+
+        margin:20% 25% 0% auto;
+        width:50%;
+        color:black; 
+        
+        padding:1%;  
+    }
+    .form input{
+        text-align:center;
+        width:70%;
+        padding-bottom:2%;
+        
+    
+    }
+    .form label{
+        color:black;
+        text-align:left;
+        font-weight: 600;
+        
+    }
+    .form .textarea{
+        width:70%;
+        height:20%;
+            }
+    .form button{
+        border:none;
+        color:rgba(14, 138, 14, 0.89);
+        border:1px solid green;
+    }
+    @media( min-width:800px){
+            .form{
+                margin:10% auto 10% auto;
+
+            }
+            .form input{
+                width:60%
+            }
+            .form .textarea{
+                width:60%
+            }
+         
+
+        }
+
+</style>
+ <body>
+     <%- include("../nav") %>
+     <br>
+     <form class="form" action="/add-product" method ="POST">
+        <label>Title:</label>
+        <br>
+        <input type= "text" name="title" required><br><br>
+        <label>image URL:</label>
+        <br>
+        <input type ="text" name="imageurl" required><br><br>
+        <label>Price:</label>
+        <br>
+        <input type="text" name="price" required><br><br>
+        <label>Description:</label>
+        <br>
+        <textarea type="text"  row="5" name="description" class="textarea" required> </textarea><br><br>
+        <button type="submit" required>Add Product</button>
+
+    </form>
+
+    
+
+ </body>
+ </html>
